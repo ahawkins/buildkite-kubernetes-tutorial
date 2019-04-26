@@ -11,10 +11,11 @@
         profile: slashdeploy
         template_url: "https://s3.amazonaws.com/buildkite-aws-stack/v4.3.1/aws-stack.yml"
         template_parameters:
+          ManagedPolicyARN: arn:aws:iam::aws:policy/PowerUserAccess
           InstanceType: t2.micro
           BuildkiteAgentToken: "3ba66f4248a4a3062b5060cdae6292c7873c48f48e4245e295"
           KeyName: dev-box
-          MinSize: 1
+          MinSize: 0
           MaxSize: 1
       register: cf
 
