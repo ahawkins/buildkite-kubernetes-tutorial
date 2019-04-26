@@ -29,6 +29,6 @@ aws eks \
 
 echo 'Checking kubectl connection'
 
-kubectl get services --v=10
+kubectl get services
 
 set +eu
