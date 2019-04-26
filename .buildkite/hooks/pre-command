@@ -20,4 +20,11 @@ kubectl version --client
 echo '$ aws-iamauthenticator version'
 aws-iam-authenticator version
 
+echo ':kubernetes: Connecting'
+
+aws eks \
+	--region ap-south-1 \
+	update-kubeconfig \
+	--name buildkite-tutorial
+
 set +eu
