@@ -12,7 +12,7 @@ curl -sSL -o "${HOME}/bin/aws-iam-authenticator" \
 chomd +x "${HOME}/bin/kubectl"
 chomd +x "${HOME}/bin/aws-iam-authenticator"
 
-export "PATH=${scratch}:${PATH}"
+export "PATH=${HOME}/bin:${PATH}"
 
 kubectl version --client
 aws-iam-authenticator --version
