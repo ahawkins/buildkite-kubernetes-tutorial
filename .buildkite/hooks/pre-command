@@ -14,7 +14,10 @@ chmod +x "${HOME}/bin/aws-iam-authenticator"
 
 export "PATH=${HOME}/bin:${PATH}"
 
+echo '$ kubectl --version'
 kubectl version --client
-aws-iam-authenticator --version
+
+echo '$ aws-iamauthenticator version'
+aws-iam-authenticator version
 
 set +eu
