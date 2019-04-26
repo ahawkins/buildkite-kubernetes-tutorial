@@ -27,4 +27,8 @@ aws eks \
 	update-kubeconfig \
 	--name buildkite-tutorial
 
+echo 'Checking kubectl connection'
+
+kubectl get service
+
 set +eu
