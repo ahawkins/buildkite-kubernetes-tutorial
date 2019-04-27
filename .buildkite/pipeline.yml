@@ -4,5 +4,5 @@ steps:
 
   - label: Test Kops
     command: script/buildkite/test-kops
-    environment:
+    env:
       KOPS_STATE_STORE: s3://slashdeploy-kops-state-store
