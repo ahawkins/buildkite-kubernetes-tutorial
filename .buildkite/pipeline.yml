@@ -1,3 +1,8 @@
 steps:
-  - label: Test
-    command: script/buildkite/test
+  - label: Test EKS
+    command: script/buildkite/test-eks
+
+  - label: Test Kops
+    command: script/buildkite/test-kops
+    environment:
+      KOPS_STATE_STORE: s3://slashdeploy-kops-state-store
