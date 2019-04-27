@@ -6,6 +6,10 @@ main() {
 	echo 'Loading kubeconfig from kops'
 
   kops export kubecfg buildkite-k8s.slashdeploy.com
+
+	echo 'Checking cluster access'
+
+	kubectl get services
 }
 
 main "$@"
