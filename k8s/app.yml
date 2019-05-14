@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: app
-          image: nginx:1.7.9
+          image: "${DOCKER_IMAGE_NAME}"
           ports:
             - containerPort: 3000

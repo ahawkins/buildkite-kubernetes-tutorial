@@ -11,8 +11,7 @@ main() {
 
 	echo '--- :kubernetes: Shipping'
 
-	kubectl apply -f k8s/app.yml
-	kubectl set image deployment/tutorial "app=${DOCKER_IMAGE_NAME}"
+	envsubst < k8s/app.yml | kubectl apply -f -
 }
 
 main "$@"
