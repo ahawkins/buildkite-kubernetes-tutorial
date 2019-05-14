@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  bundler:
+    image: ruby:2.6
+    volumes:
+      - ./:/data
+    # work_dir: /data
+    command: bundle package
+
+  app:
+    build: .
+    image: buildkite/kubernetes-tutorial

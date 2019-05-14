@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+main() {
+	exec bundle exec rackup \
+		--host "0.0.0.0" \
+		-r "./app.rb" \
+		-p "${PORT}"
+}
+
+main "$@"

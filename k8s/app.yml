@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tutorial-deployment
+  labels:
+    app: tutorial
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tutorial
+  template:
+    metadata:
+      labels:
+        app: tutorial
+    spec:
+      containers:
+				- name: app
+					image: nginx:1.7.9
+					ports:
+						- containerPort: 80
