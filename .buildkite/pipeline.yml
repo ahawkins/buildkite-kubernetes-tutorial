@@ -12,6 +12,8 @@ steps:
     agents:
       cloud: gcp
 
+  - wait
+
   - label: ':rocket: Deploy'
     command: script/buildkite/deploy
     agents:
