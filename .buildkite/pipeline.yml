@@ -9,10 +9,10 @@ steps:
 
   - label: ':hammer: Test'
     command: script/buildkite/test
-    agent:
+    agents:
       cloud: gcp
 
   - label: ':rocket: Deploy'
     command: script/buildkite/deploy
-    agent:
+    agents:
       cloud: gcp
