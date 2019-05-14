@@ -1,12 +1,4 @@
 steps:
-  # - label: Test EKS
-  #   command: script/buildkite/test-eks
-  #
-  # - label: Test Kops
-  #   command: script/buildkite/test-kops
-  #   env:
-  #     KOPS_STATE_STORE: s3://slashdeploy-kops-state-store
-
   - label: ':hammer: Test'
     command: script/buildkite/test
     agents:
@@ -14,7 +6,14 @@ steps:
 
   - wait
 
+  - label: ':docker: Push'
+    command: script/buildkite/push
+    agents:
+      cloud: gcp
+
   - label: ':rocket: Deploy'
     command: script/buildkite/deploy
+    concurrency: 1
+    concurrency_group: deploy/tutorial
     agents:
       cloud: gcp

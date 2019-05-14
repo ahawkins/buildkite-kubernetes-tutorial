@@ -3,12 +3,6 @@
 set -euo pipefail
 
 main() {
-	echo '--- :docker: Pushing'
-
-	docker-compose build app
-	docker tag buildkite/kubernetes-tutorial:latest "${DOCKER_IMAGE_NAME}"
-	docker push "${DOCKER_IMAGE_NAME}"
-
 	echo '--- :kubernetes: Shipping'
 
 	envsubst < k8s/app.yml | kubectl apply -f -
