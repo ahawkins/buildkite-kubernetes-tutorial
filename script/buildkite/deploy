@@ -8,6 +8,11 @@ main() {
 	docker-compose build app
 	docker tag buildkite/kubernetes-tutorial:latest "${DOCKER_IMAGE_NAME}"
 	docker push "${DOCKER_IMAGE_NAME}"
+
+	echo '--- :kubernetes: Shipping'
+
+	kubectl apply -f k8s/app.yml
+	kubectl set image deployment/tutorial "app=${DOCKER_IMAGE_NAME}"
 }
 
 main "$@"
