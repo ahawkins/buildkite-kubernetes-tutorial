@@ -11,3 +11,5 @@ services:
   app:
     build: .
     image: buildkite/kubernetes-tutorial
+    ports:
+      - 3000

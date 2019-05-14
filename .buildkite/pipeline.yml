@@ -1,8 +1,18 @@
 steps:
-  - label: Test EKS
-    command: script/buildkite/test-eks
+  # - label: Test EKS
+  #   command: script/buildkite/test-eks
+  #
+  # - label: Test Kops
+  #   command: script/buildkite/test-kops
+  #   env:
+  #     KOPS_STATE_STORE: s3://slashdeploy-kops-state-store
 
-  - label: Test Kops
-    command: script/buildkite/test-kops
-    env:
-      KOPS_STATE_STORE: s3://slashdeploy-kops-state-store
+  - label: ':hammer: Test'
+    command: script/buildkite/test
+    agent:
+      cloud: gcp
+
+  - label: ':rocket: Deploy'
+    command: script/buildkite/deploy
+    agent:
+      cloud: gcp
