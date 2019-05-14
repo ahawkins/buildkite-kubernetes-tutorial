@@ -3,15 +3,15 @@
 set -euo pipefail
 
 main() {
-	echo '-- :docker: Setup'
+	echo '--- :docker: Setup'
 
 	docker-compose up --build -d app
 
-	echo '-- :zzz: waiting'
+	echo '--- :zzz: waiting'
 
 	sleep 2
 
-	echo '-- Testing'
+	echo '--- Testing'
 
 	curl -s "$(docker-compose port app 3000)"
 
