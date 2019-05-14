@@ -4,6 +4,16 @@ set -eu
 
 export DOCKER_IMAGE_NAME="asia.gcr.io/buildkite-kubernetes-tutorial/app:${BUILDKITE_BUILD_NUMBER}"
 
+echo '--- :gcloud: Setup'
+
+gcloud config set project 'buildkite-kubernetes-tutorial'
+gcloud config set compute/zone 'asia-southeast1-a'
+gcloud config set compute/region 'asia-southeast1'
+
+gcloud container clusters get-credentials buildkite-tutorial
+
+set +eu
+
 # mkdir -p "${HOME}/bin"
 #
 # curl -sSL -o "${HOME}/bin/kubectl" \
