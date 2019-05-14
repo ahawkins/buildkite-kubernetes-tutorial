@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+main() {
+	echo '--- :docker: Pushing'
+
+	docker tag $(docker-compose images -q) "${DOCKER_IMAGE_NAME}"
+	docker push "${DOCKER_IMAGE_NAME}"
+}
+
+main "$@"
