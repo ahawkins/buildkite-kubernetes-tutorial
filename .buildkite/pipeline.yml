@@ -12,3 +12,15 @@ steps:
       DOCKER_IMAGE: "asia.gcr.io/buildkite-kubernetes-tutorial/app:${BUILDKITE_BUILD_NUMBER}"
     agents:
       cloud: gcp
+
+  - wait
+
+  - label: ':rocket: Deploy'
+    trigger: kubernetes-tutorial-deploy
+    branches: "master"
+    build:
+      message: "${BUILDKITE_MESSAGE}"
+      commit: "${BUILDKITE_COMMIT}"
+      branch: "${BUILDKITE_BRANCH}"
+    env:
+      DOCKER_IMAGE: "asia.gcr.io/buildkite-kubernetes-tutorial/app:${BUILDKITE_BUILD_NUMBER}"
