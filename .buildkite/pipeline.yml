@@ -7,6 +7,8 @@ steps:
   - wait
 
   - label: ':docker: Push'
-    command: 'script/buildkite/push "asia.gcr.io/buildkite-kubernetes-tutorial/app:${BUILDKITE_BUILD_NUMBER}"'
+    command: script/buildkite/push
+    env:
+      DOCKER_IMAGE: "asia.gcr.io/buildkite-kubernetes-tutorial/app:${BUILDKITE_BUILD_NUMBER}"
     agents:
       cloud: gcp
