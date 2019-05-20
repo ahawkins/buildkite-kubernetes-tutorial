@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: app
-          image: "${DOCKER_IMAGE_NAME}"
+          image: "${DOCKER_IMAGE}"
           ports:
             - containerPort: 3000
