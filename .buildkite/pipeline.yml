@@ -4,6 +4,8 @@ steps:
     agents:
       cloud: gcp
 
+  - wait
+
   - label: ':docker: Push'
     command: 'script/buildkite/push "asia.gcr.io/buildkite-kubernetes-tutorial/app:${BUILDKITE_BUILD_NUMBER}"'
     agents:
