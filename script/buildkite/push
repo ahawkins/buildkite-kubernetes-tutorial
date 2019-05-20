@@ -6,8 +6,8 @@ main() {
 	echo '--- :docker: Pushing'
 
 	docker-compose build app
-	docker tag buildkite/kubernetes-tutorial:latest "${DOCKER_IMAGE_NAME}"
-	docker push "${DOCKER_IMAGE_NAME}"
+	docker tag buildkite/kubernetes-tutorial:latest "${DOCKER_IMAGE}"
+	docker push "${DOCKER_IMAGE}"
 }
 
 main "$@"
