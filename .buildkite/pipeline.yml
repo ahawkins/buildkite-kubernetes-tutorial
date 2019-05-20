@@ -4,16 +4,7 @@ steps:
     agents:
       cloud: gcp
 
-  - wait
-
   - label: ':docker: Push'
-    command: script/buildkite/push
-    agents:
-      cloud: gcp
-
-  - label: ':rocket: Deploy'
-    command: script/buildkite/deploy
-    concurrency: 1
-    concurrency_group: deploy/tutorial
+    command: 'script/buildkite/push "asia.gcr.io/buildkite-kubernetes-tutorial/app:${BUILDKITE_BUILD_NUMBER}"'
     agents:
       cloud: gcp

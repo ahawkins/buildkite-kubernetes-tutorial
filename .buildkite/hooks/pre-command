@@ -26,6 +26,5 @@ kubectl get services
 echo '--- :terminal: Env vars'
 
 # TODO: set your image name here
-export DOCKER_IMAGE_NAME="asia.gcr.io/buildkite-kubernetes-tutorial/app:${BUILDKITE_BUILD_NUMBER}"
 
 set +eu

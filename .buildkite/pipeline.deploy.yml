@@ -1,0 +1,7 @@
+steps:
+  - label: ':rocket: Deploy'
+    command: script/buildkite/deploy
+    concurrency: 1
+    concurrency_group: deploy/tutorial
+    agents:
+      cloud: gcp
